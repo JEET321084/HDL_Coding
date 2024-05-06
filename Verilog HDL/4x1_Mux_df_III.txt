@@ -1,0 +1,12 @@
+// 4x1 Mux Data Flow Code III <Verilog HDL>
+
+module mux_4_1(y,i,s)
+input [3:0]i;
+input [1:0]s;
+output y;
+
+assign y= (s==2'd0)?i[0]:((s==2'd1)?i[1]:((s==2'd2)?i[2]:i[3]));
+// this is comperator based gives another hardware;
+// it is implemented as priority as i[0]>i[3]>i[4]>i[2]: delay time;
+
+endmodule

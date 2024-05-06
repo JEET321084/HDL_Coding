@@ -1,0 +1,25 @@
+//2x4 Decoder Data Flow Code <Verilog HDL>
+
+//The Truth Table:
+
+En I1 I0| Y3 Y2 Y1 Y0
+1  0  0 | 0  0  0  1
+1  0  1 | 0  0  1  0
+1  1  0 | 0  1  0  0
+1  0  0 | 1  0  0  0
+0  X  X | 0  0  0  0
+
+// verilog code
+
+module decoder_2_4_df(y,i,en);
+input [1:0]i;
+input en;
+output [3:0]y;
+
+assign 
+	y= 	{en & i[1] & i[0], 
+		en & i[1] & ~i[0],
+		en & ~i[1] & i[0],
+		en & ~i[1] & ~i[0]};
+endmodule
+		

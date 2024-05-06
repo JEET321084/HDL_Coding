@@ -1,0 +1,15 @@
+//XNOR Gate data Flow Code <VHDL>
+
+library ieee;
+use iee.std_logic_1164.all;
+
+entity xnorgate is
+port (A,B:in std_logic; Y:out std_logic);
+end xnorgate;
+
+arrchitecture arch_xnor of xnor is
+signal c: std_logic;
+begin
+c<=A xor B;
+Y<= not c;
+end;

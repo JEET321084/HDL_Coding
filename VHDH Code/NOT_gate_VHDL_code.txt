@@ -1,0 +1,13 @@
+//NOT Gate Data Flow Code <VHDL>
+
+library ieee;
+use ieee.std_logic.1164.all;
+
+entity notgate is 
+port (A:in std_logic; Y:out std_logic);
+end notgate;
+
+architecture arch_not of notgate is
+begin
+Y<= not A;
+end;

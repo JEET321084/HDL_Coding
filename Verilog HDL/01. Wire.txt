@@ -1,0 +1,6 @@
+//Implementation Of Wire in Verilog
+
+module wire (
+	input in,
+	output out);
+endmodule

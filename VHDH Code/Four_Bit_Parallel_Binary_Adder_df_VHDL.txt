@@ -1,0 +1,22 @@
+//Four Bit Parallel Binary Adder Data Flow <VHDL>
+
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity adder_4bit is
+port (A,B:in std_logic_vector(3 downto 0); S:out std_logic_vector(3 downto 0); Cout:out std_logic);
+end adder_4bit;
+
+architecture adder_4bit_arch of adder_4bit is 
+component fulladder is					//full adder program is used as a component.
+port (A,B,C:in std_logic; S,C:out std_logic);
+end component;
+
+signal Cin,C1,C2,C3:std_logic				//hold current value and a set of possible future values.
+begin
+	Cin<='0';
+	a1: fulladder port map(A(0),B(0),Cin,S(0),C1);	//calling fulladder program first three bits.
+	a2: fulladder port map(A(1),B(1),Cin,S(1),C2);	
+	a3: fulladder port map(A(2),B(2),Cin,S(2),C3);
+	a4: fulladder port map(A(3),B(3),Cin,S(3),Cout);
+end;

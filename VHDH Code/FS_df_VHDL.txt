@@ -1,0 +1,14 @@
+//Full Subtractor Data Flow Code <VHDL>
+
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity fullsubtractor is
+port (X,Y,Bin:in std_logic;D,Bout:out std_logic);
+end fullsubtractor;
+
+architecture fullsubtractor_arch of fullsubtractor is
+begin
+D<= X xor Y xor Bin;
+Bout= (Y and Bin)or((not X)and Bin)or((not X)and Y);
+end fullsubtractor_arch;

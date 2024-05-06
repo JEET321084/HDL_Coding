@@ -1,0 +1,14 @@
+//Half Adder Data Flow Code <VHDL>
+
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity halfadder is
+port (A,B:in std_logic;S,C:out std_logic);
+end halfadder;
+
+architecture halfadder_arch of halfadder is
+begin 
+S<=A xor B;
+Y<=A and b;
+end;

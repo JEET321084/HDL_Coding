@@ -1,0 +1,13 @@
+//4x1 Mux Data Flow Code <VHDL>
+
+library ieee;
+usew ieee.std_logic_1164.all;
+
+entity mux is
+port (S1,S0,D0,D1,D2,D3:in std_logic; Y:out std_logic);
+end mux;
+
+architecture arch_mux of mux is
+begin 
+Y<=((not S1)and(not S0)and D0)or((not S2)and S0 and D1)or(S1 and (not S0) and D2)or(S1 and S0 and D3);
+end arch_mux;

@@ -1,0 +1,18 @@
+// AND Gate Data Flow Code <VHDL>
+
+library ieee;				// std_logic_1164 defined by IEEE;
+use ieee.std_logic_1164.all;		// Pacakge that defines Data types;
+					// std_logic, std_ulogic, std_logic_vector
+//library std;
+//use.std.standard.all;
+//library work;
+//use.work.all;
+
+entity andgate is				//declearation of entity;
+port (A,B:in std_logic; Y:out std_logic);
+end andgate;
+
+architecture arch_and of andgate is
+begin
+Y<=A and B;					//logic AND;
+end;

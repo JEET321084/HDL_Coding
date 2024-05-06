@@ -1,0 +1,13 @@
+// Or Gate Data Flow Code <VLDH>
+
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity orgate is
+port (A,B: in std_logic; Y:out std_logic);
+end orgate;
+
+architecture arch_or of orgate is
+begin
+Y<=A or B;
+end;

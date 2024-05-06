@@ -1,0 +1,15 @@
+//Half Subtrctor Data Flow Code <VHDL>
+
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity halfsubtractor is
+port (A,B:in std_logic:Bout,D:out std_logic);
+end halfsubtractor;
+
+architecture halfsubtractor_arc for haldsubtractor is
+begin
+D<=A xor B;
+Bout<=A and B;
+
+end;

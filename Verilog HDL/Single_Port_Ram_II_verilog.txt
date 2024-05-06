@@ -1,0 +1,18 @@
+//Single Port Ram Behavioral Code <Verilog>
+
+ module ram_simgle_port_II(
+	output reg [7:0] q, 
+	input [7:0] data, 
+	inout [5:0] read_addr, write_addr,
+	input we, clk
+	);
+	reg [7:0] ram[63:0];
+
+//new data read
+always @ (posedge clk)
+begin 
+	if(we)
+	ram[write_addr] = data;
+	q = ram[read_addr];
+	end
+endmodule

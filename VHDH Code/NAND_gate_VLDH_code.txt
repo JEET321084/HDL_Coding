@@ -1,0 +1,13 @@
+//NAND Gate data Flow Code <VLDH>
+
+library ieee;
+use iee.std_logic_1164.all;
+
+entity nandgate is
+port (A,B:in std_logic; Y:out std_logic);
+end nandgate;
+
+architecture arc_nand of nandgate is
+begin
+Y<= A nand B;
+end;

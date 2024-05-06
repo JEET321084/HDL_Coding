@@ -1,0 +1,18 @@
+//Dual Port Ram Behavioral Code <Verilog>
+
+ module ram_dual_port_I(
+	output reg [7:0]q, 
+	input [7:0] data, 
+	inout [5:0] read_addr, write_addr,
+	input we, read_clk, write_clk
+	);
+	reg [7:0] ram[63:0];
+
+//write port
+always @ (posedge write_clk)
+	if(we)
+	ram[write_addr] <= data;
+//read port
+always @ (posedge read_clk)
+	q <= ram[read_addr];
+endmodule
